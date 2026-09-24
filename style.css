@@ -1,14 +1,17 @@
+:root {
+--forest: #2f4734;
+--moss: #70856f;
+--stone: #d5d0c8;
+--sand: #f4efe6;
+--mist: #faf9f6;
+--charcoal: #2e2e2e;
+}
+
 body {
     font-family: "Segoe UI", sans-serif;
 
-    background:
-    linear-gradient(
-    180deg,
-    #eef2ee 0%,
-    #f7f3eb 100%
-    );
-     
-    color: #2d2d2d;
+    background: var(--mist);
+    color: var(--charcoal);
     margin: 0;
     padding: 40px;
 
@@ -31,11 +34,15 @@ body {
 h1 {
     text-align: center;
 
-    color: #8b5e34;
+    color: var(--forest);
 
     font-size: 3rem;
 }
 
+section {
+background: white;
+border: 1px solid var(--stone);
+}
 
 .game-section {
     text-align: center;
