@@ -8,5 +8,25 @@
 <body>
     <h1>Velkommen til bryllupssiden vår!</h1>
     <p>Denne siden er publisert med GitHub Pages.</p>
+    <h1>Bryllupspong</h1>
+
+    <p>Velg hvilken spiller du vil kontrollere:</p>
+    
+    <div class="game-controls">
+        <button id="chooseLeft">Spill som venstre</button>
+        <button id="chooseRight">Spill som høyre</button>
+        <button id="restartGame">Start på nytt</button>
+    </div>
+    
+    <p id="instructions">
+        Velg en spiller for å starte.
+    </p>
+    
+    <div id="score">0–0</div>
+    
+    <canvas id="gameCanvas" width="900" height="500"></canvas>
+
+    <script src="script.js"></script>
+    
 </body>
 </html>
