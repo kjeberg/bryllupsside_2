@@ -1,14 +1,41 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-    <meta charset="UTF-8">
-    <title>Bryllupsside</title>
-</head>
-<body>
-    <h1>Velkommen til bryllupssiden vår!</h1>
-    <p>Denne siden er publisert med GitHub Pages.</p>
-</body>
-</html>
+body {
+    font-family: "Segoe UI", sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #f8f1e7,
+        #fffaf5,
+        #f2e8da
+    );
+
+    margin: 0;
+    padding: 40px;
+
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+
+    color: #8b5e34;
+
+    font-size: 3rem;
+}
+
 
 .game-section {
     text-align: center;
