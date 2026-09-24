@@ -51,6 +51,46 @@ let controlledPlayer = null;
 let leftScore = 0;
 let rightScore = 0;
 let gameRunning = false;
+canvas.addEventListener("mousemove", function(event) {
+
+    const rect = canvas.getBoundingClientRect();
+
+    const mouseY =
+        event.clientY - rect.top;
+
+    if (controlledPlayer === "left") {
+
+        leftPaddle.y =
+            mouseY - leftPaddle.height / 2;
+
+    } else if (controlledPlayer === "right") {
+
+        rightPaddle.y =
+            mouseY - rightPaddle.height / 2;
+    }
+});
+
+canvas.addEventListener("touchmove", function(event) {
+
+    event.preventDefault();
+
+    const rect = canvas.getBoundingClientRect();
+
+    const touchY =
+        event.touches[0].clientY - rect.top;
+
+    if (controlledPlayer === "left") {
+
+        leftPaddle.y =
+            touchY - leftPaddle.height / 2;
+
+    } else if (controlledPlayer === "right") {
+
+        rightPaddle.y =
+            touchY - rightPaddle.height / 2;
+    }
+
+}, { passive: false });
 
 // Tastetrykk
 document.addEventListener("keydown", function (event) {
@@ -75,7 +115,7 @@ chooseLeftButton.addEventListener("click", function () {
     gameRunning = true;
 
     instructions.textContent =
-        "Du styrer venstre spiller med W og S. Høyre spiller styres av datamaskinen.";
+        "Flytt musen opp og ned for å styre spilleren";
 
     updateSelectedButton();
 });
@@ -86,7 +126,7 @@ chooseRightButton.addEventListener("click", function () {
     gameRunning = true;
 
     instructions.textContent =
-        "Du styrer høyre spiller med pil opp og pil ned. Venstre spiller styres av datamaskinen.";
+        "Flytt musen opp og ned for å styre spilleren";
 
     updateSelectedButton();
 });
