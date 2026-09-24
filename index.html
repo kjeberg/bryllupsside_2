@@ -1,32 +1,72 @@
 <!DOCTYPE html>
 <html lang="no">
+
 <head>
     <meta charset="UTF-8">
-    <title>Bryllupsside</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kjersti & Magnus</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Velkommen til bryllupssiden vår!</h1>
-    <p>Denne siden er publisert med GitHub Pages.</p>
-    <h1>Bryllupspong</h1>
 
-    <p>Velg hvilken spiller du vil kontrollere:</p>
-    
-    <div class="game-controls">
-        <button id="chooseLeft">Spill som venstre</button>
-        <button id="chooseRight">Spill som høyre</button>
-        <button id="restartGame">Start på nytt</button>
+<body>
+
+    <div class="container">
+
+        <h1>Kjersti & Magnus</h1>
+
+        <p>
+            Velkommen til bryllupssiden vår.
+        </p>
+
+        <section>
+            <h2>Om dagen</h2>
+
+            <p>
+                Her kommer informasjon om tid, sted, overnatting og annet
+                praktisk.
+            </p>
+        </section>
+
+        <section>
+            <h2>Program</h2>
+
+            <p>
+                Vielse: xx:xx <br>
+                Middag: xx:xx <br>
+                Fest: xx:xx
+            </p>
+        </section>
+
+        <section>
+            <h2>Pong Battle</h2>
+
+            <p>
+                Klarer du å slå den andre?
+            </p>
+
+            <div class="game-controls">
+                <button id="chooseLeft">Spill som venstre</button>
+                <button id="chooseRight">Spill som høyre</button>
+                <button id="restartGame">Start på nytt</button>
+            </div>
+
+            <p id="instructions">
+                Velg en spiller for å starte.
+            </p>
+
+            <div id="score">0–0</div>
+
+            <canvas id="gameCanvas"
+                    width="900"
+                    height="500"></canvas>
+
+        </section>
+
     </div>
-    
-    <p id="instructions">
-        Velg en spiller for å starte.
-    </p>
-    
-    <div id="score">0–0</div>
-    
-    <canvas id="gameCanvas" width="900" height="500"></canvas>
 
     <script src="script.js"></script>
-    
+
 </body>
 </html>
