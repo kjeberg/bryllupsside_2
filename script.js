@@ -9,10 +9,10 @@ const scoreElement = document.getElementById("score");
 
 // Last inn spillerbildene
 const leftImage = new Image();
-leftImage.src = "krister.png";
+leftImage.src = "krister.jpg";
 
 const rightImage = new Image();
-rightImage.src = "kjersti.png";
+rightImage.src = "kjersti.jpg";
 
 // Størrelse på spillerne
 const paddleWidth = 90;
