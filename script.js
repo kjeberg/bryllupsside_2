@@ -68,6 +68,17 @@ canvas.addEventListener("mousemove", function(event) {
         rightPaddle.y =
             mouseY - rightPaddle.height / 2;
     }
+    leftPaddle.y = Math.max(
+    0,
+    Math.min(canvas.height - leftPaddle.height,
+             leftPaddle.y)
+    );
+    
+    rightPaddle.y = Math.max(
+        0,
+        Math.min(canvas.height - rightPaddle.height,
+                 rightPaddle.y)
+    );
 });
 
 canvas.addEventListener("touchmove", function(event) {
