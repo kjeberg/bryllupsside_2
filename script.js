@@ -169,25 +169,8 @@ function updateSelectedButton() {
 
 // Flytt spilleren som brukeren kontrollerer
 function moveHumanPlayer() {
-    if (controlledPlayer === "left") {
-        if (keys["w"]) {
-            leftPaddle.y -= leftPaddle.speed;
-        }
-
-        if (keys["s"]) {
-            leftPaddle.y += leftPaddle.speed;
-        }
-    }
-
-    if (controlledPlayer === "right") {
-        if (keys["arrowup"]) {
-            rightPaddle.y -= rightPaddle.speed;
-        }
-
-        if (keys["arrowdown"]) {
-            rightPaddle.y += rightPaddle.speed;
-        }
-    }
+// Bevegelse styres av mus/touch.
+// Ingenting skal gjøres her.
 }
 
 // Flytt datamaskinens spiller
