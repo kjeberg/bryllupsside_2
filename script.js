@@ -1,6 +1,8 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
+const isMobile = window.innerWidth < 768;
+
 const chooseLeftButton = document.getElementById("chooseLeft");
 const chooseRightButton = document.getElementById("chooseRight");
 const restartButton = document.getElementById("restartGame");
@@ -15,8 +17,8 @@ const rightImage = new Image();
 rightImage.src = "kjersti.jpg";
 
 // Størrelse på spillerne
-const paddleWidth = 90;
-const paddleHeight = 100;
+const paddleWidth = isMobile ? 120 : 90;
+const paddleHeight = isMobile ? 140 : 100;
 
 // Spillerne
 const leftPaddle = {
