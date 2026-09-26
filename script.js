@@ -57,8 +57,10 @@ canvas.addEventListener("mousemove", function(event) {
 
     const rect = canvas.getBoundingClientRect();
 
+    const scaleY = canvas.height / rect.height;
+
     const mouseY =
-        event.clientY - rect.top;
+        (event.clientY - rect.top) * scaleY;
 
     if (controlledPlayer === "left") {
 
@@ -70,12 +72,13 @@ canvas.addEventListener("mousemove", function(event) {
         rightPaddle.y =
             mouseY - rightPaddle.height / 2;
     }
+
     leftPaddle.y = Math.max(
-    0,
-    Math.min(canvas.height - leftPaddle.height,
-             leftPaddle.y)
+        0,
+        Math.min(canvas.height - leftPaddle.height,
+                 leftPaddle.y)
     );
-    
+
     rightPaddle.y = Math.max(
         0,
         Math.min(canvas.height - rightPaddle.height,
@@ -89,8 +92,10 @@ canvas.addEventListener("touchmove", function(event) {
 
     const rect = canvas.getBoundingClientRect();
 
+    const scaleY = canvas.height / rect.height;
+
     const touchY =
-        event.touches[0].clientY - rect.top;
+        (event.touches[0].clientY - rect.top) * scaleY;
 
     if (controlledPlayer === "left") {
 
@@ -102,6 +107,18 @@ canvas.addEventListener("touchmove", function(event) {
         rightPaddle.y =
             touchY - rightPaddle.height / 2;
     }
+
+    leftPaddle.y = Math.max(
+        0,
+        Math.min(canvas.height - leftPaddle.height,
+                 leftPaddle.y)
+    );
+
+    rightPaddle.y = Math.max(
+        0,
+        Math.min(canvas.height - rightPaddle.height,
+                 rightPaddle.y)
+    );
 
 }, { passive: false });
 
