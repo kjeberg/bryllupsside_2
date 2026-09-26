@@ -148,6 +148,7 @@ chooseLeftButton.addEventListener("click", function () {
         "Flytt musen opp og ned for å styre spilleren";
 
     updateSelectedButton();
+
 });
 
 // Velg høyre spiller
@@ -172,6 +173,22 @@ restartButton.addEventListener("click", function () {
     updateScore();
     resetBall();
 });
+
+function registerPlay() {
+
+        fetch(
+        "https://api.countapi.xyz/hit/gaultheria/pong"
+        )
+        .then(r => r.json())
+        .then(data => {
+         
+        document.getElementById(
+        "pongCounter"
+        ).textContent =
+        `Antall spillere: ${data.value}`;
+
+        });
+    }
 
 // Vis hvilken spiller som er valgt
 function updateSelectedButton() {
@@ -305,9 +322,9 @@ function changeBallDirection(paddle) {
     ball.dy = relativeHitPosition * 5;
 
     // Øk hastigheten litt for hvert treff
-    ball.dx *= 1.03;
+    ball.dx *= 1.10;
 
-    const maximumSpeed = 10;
+    const maximumSpeed = 20;
 
     if (Math.abs(ball.dx) > maximumSpeed) {
         ball.dx =
